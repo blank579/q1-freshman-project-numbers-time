@@ -1,0 +1,4 @@
+Numbers and Time
+gusse the numbers and code displayed to you and see how fast you can remember them 
+this app uses import time os (to clear the terminal ),random to gather infroamtion how fast you can remember things.
+simply what it does it first dis play a number and you have a few seconds to answer and it disappear and you have to put in that number you saw then it shows a code that appears for some time and disspears and you have to put in that code 
