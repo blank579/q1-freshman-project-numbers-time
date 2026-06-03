@@ -19,6 +19,8 @@ def clear():
 health = 100
 level=0
 correct_answer=0
+
+coins=0
 print(f"\nLEVEL: {level}")
 
 print(" you have health", health)
@@ -60,28 +62,48 @@ while health > 0:
    numbers = random.choice([1504, 5991, 9945, 7561, 2921, 5311, 5761])
    if level==0:
        numbers= random.randint(1000,9999)
+       print("LEVEL Difficulty EASY")
+       coins_earned=random.randint(80,100)
+
+
 
    elif level==1:
        numbers=random.randint(10000,99999)
+       print("LEVEL Difficulty MEDIM")
+       coins_earned=random.randint(57,75)
 
 
    elif level==2:
        numbers=random.randint(100000,999999)
+       print("LEVEL Difficulty HARD")
+       coins_earned=random.randint(25,27)
 
    
    elif level==3:
        numbers=random.randint(10000000,9999999)
+       print("LEVEL Difficulty EXTREAM")
+       coins_earned=random.randint(15,17)
 
    print("\nthe number is:", numbers)
    clear()
 
+   #try:
 
    numberguess = int(input("\n\n\n\n\nwhat number did you see: "))
+   #break
+
+   #except ValueError:
+   #print("only numbers Try again .")
 
 
    if numberguess == numbers:
 
       print("you got the number right")
+      coins+=coins_earned
+      print(f" + {coins_earned} coins!")
+      print(f" Total coins: {coins}")
+  
+
       correct_answer+=1
       if correct_answer % 3 ==0 and level <3:
           level +=1
@@ -194,15 +216,36 @@ while health > 0:
    if start2 == "yes":
 
       code = random.choice(['xipll', 'losey', 'rainy', 'lonely', 'euww', 'zzzs'])
+      if level==0:
+       code=random.choice(["light" , "dark","mundane"," rainnnny day"])  
+       print("LEVEL Difficulty EASY")
+       coins_earned=random.randint(50,70)
+
+      elif level==1:
+       code=random.choice(["zzzzzz","Eclipse Moon","Night falll"])
+       print("LEVEL Difficulty MEDIUM ")
+       coins_earned=random.randint(44,49)
+
+      elif level==2:
+       code=random.choice("ckasechkenx","wodahS","vortex$57")
+       print("LEVEL Difficulty HARD")
+       coins_earned=random.randint(10,15)
+
+      elif level==3:
+       code=random.randint("gggg","u_seen","tim#_tamp","Sentinelx,XTREAM")
+       print("LEVEL Difficulty EXTREAM")
+       coins_earned=random.randint(1,5)
 
       print("code is:", code)
       time.sleep(2)
-      os.system("clear")
+      os.system("cls")
 
       codeguess = input("what code did you see: ")
 
       if codeguess == code:
          
+         
+         # IF I still have health the game should still be going on 
 
          print("you got the code right")
          correct_answer+=1
@@ -218,34 +261,42 @@ while health > 0:
             healed = random.randint(20, 24)
             health += healed
             print(f" you got healed by protein bar {healed} health")
+        
          elif random_goodvandingMachine2 == "pizza":
             healed = random.randint(5, 9)
             health += healed
             print(f" you got healed by pizza {healed} health")
+         
          elif random_goodvandingMachine2 == "potion":
             healed = random.randint(10, 12)
             health += healed
             print(f" you got healed by potion {healed} health")
+         
          elif random_goodvandingMachine2 == "big potion":
             healed = random.randint(55, 77)
             health += healed
             print(f" you got healed by big potion {healed} health")
+         
          elif random_goodvandingMachine2 == "bandage":
             healed = random.randint(10, 14)
             health += healed
             print(f" you got healed by bandage {healed} health")
+         
          elif random_goodvandingMachine2 == "magic potion":
             healed= random.randint(57, 75)
             health += healed
             print(f" you got healed by magic potion {healed} health")
+         
          elif random_goodvandingMachine2 == "burger":
             healed = random.randint(20, 24)
             health += healed
             print(f" you got healed by burger {healed} health")
+         
          if health > 100:
             health = 100
          print("health after heal:", health)
          print("you win")
+      
       elif codeguess != code:
          random_badluck = random.choice(["traps", "spikes", "lasers"])
          print("you got hit by:", random_badluck)
